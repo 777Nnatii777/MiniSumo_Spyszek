@@ -1,6 +1,6 @@
 //sketch.c*
 //Created on: Nov 03, 2024
-//Author: Natan, Kamil*/
+//Author: Natan, Kamil, Kacper*/
 
 #include "main.h"
 #include "motor.h"
@@ -30,7 +30,7 @@ void startLoop(void) {
     uint16_t sensorValueRight = adcReadout[1];
 
 
-    if ((simpleSensorGetState(&sensorLL) < 3300) || (simpleSensorGetState(&sensorRR)) < 3300) {
+    if ((sensorValueLeft < 220) || (sensorValueRight) < 220) {
 
 
         motorSetDirection(&hmot, MOTOR_BACKWARD);
